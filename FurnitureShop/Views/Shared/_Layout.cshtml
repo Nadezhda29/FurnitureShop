@@ -4,9 +4,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link rel="stylesheet" asp-href-include="css/style.css" />
+    <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*min.css" />
 </head>
 <body>
-    <div>
+    <div class="parent-block">
         @RenderBody()
     </div>
 </body>

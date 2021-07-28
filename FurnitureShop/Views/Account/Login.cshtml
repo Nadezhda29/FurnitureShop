@@ -1,0 +1,29 @@
+﻿@model LoginModel
+
+@{
+    ViewBag.Title = "Вход";
+    Layout = "_AdminLayout";
+}
+
+<div class="text-danger" asp-validation-summary="All"></div>
+
+<form asp-action="Login" asp-controller="Account" method="post">
+    <input type="hidden" asp-for="ReturnUrl" />
+    <div class="form-group" style="width: 200px; margin-left: 580px">
+        <label asp-for="Name"></label>
+        <div><span asp-validation-for="Name" class="text-danger"></span></div>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group" style="width: 200px; margin-left: 580px">
+        <label asp-for="Password"></label>
+        <div><span asp-validation-for="Password" class="text-danger"></span></div>
+        <input asp-for="Password" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top: 30px; margin-left: 650px">Войти</button>
+</form>
+
+
+
+
+
+

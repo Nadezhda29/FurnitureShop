@@ -1,1 +1,26 @@
-﻿
+﻿.title{
+    font-size: 30px;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+}
+
+.offset-top{
+    margin-top: 20px;
+}
+
+.offset-left {
+    margin-left: 20px;
+}
+
+.a {
+    font-size: 20px;
+    font-family: 'Times New Roman';
+}
+
+.parent-block{
+    display: inline-block;
+}
+
+.child-block{
+    float: left;
+}
