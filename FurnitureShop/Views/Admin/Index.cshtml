@@ -6,11 +6,6 @@
     Layout = "_AdminLayout";
 }
 
-
-@*<div class="offset-top offset-left">
-    <hЗ class="title">@ViewBag.Title</hЗ>
-</div>*@
-
 <div class="offset-top offset-left">
     <a class="a">Категория 1</a>
     <a class="a">Категория 2</a>
@@ -40,13 +35,13 @@ else
                 <input type="hidden" name="ProductID" value="@item.ID" />
                 <button type="submit" class="btn btn-sm btn-danger">Удалить</button>
             </form>
-
-            <div class="text-center">
-                <a asp-action="Add">Добавить</a>
-            </div>
         </div>
-     }
+    }
 }
+
+<div class="text-center offset-top">
+    <a class="btn btn-primary" asp-action="Add">Добавить</a>
+</div>
 
 
 

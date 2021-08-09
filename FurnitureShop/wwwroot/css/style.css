@@ -19,8 +19,46 @@
 
 .parent-block{
     display: inline-block;
+    margin-top: 30px;
 }
 
 .child-block{
     float: left;
 }
+
+.position-right{
+    margin-left: 1150px;
+}
+
+.item-form {
+    width: 300px;
+    margin-left: 580px;
+}
+
+.picture {
+    width: 250px;
+    height: 250px;
+}
+
+.div-block{
+    width: 32%;
+    height: 400px;
+}
+
+.text-name {
+    font-size: 17px;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+.text-desc-price {
+    font-size: 17px;
+    font-family: 'Times New Roman';
+}
+
+.full-width {
+    width: 100%;
+}
+

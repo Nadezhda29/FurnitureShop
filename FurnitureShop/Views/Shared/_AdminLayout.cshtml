@@ -3,13 +3,17 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    <link rel="stylesheet" asp-href-include="css/style.css" />
     <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*min.css" />
+    <link rel="stylesheet" href="~/css/style.css"/>
+
+    <script src="~/js/script.js"></script>
 </head>
 <body>
-    <div class="offset-top" style="display: inline-block">
-        <hЗ class="title offset-left" style="float: left;">@ViewBag.Title</hЗ>
-        <div style="float: left; margin-left: 1150px; margin-top: 30px">
+    <div class="parent-block">
+        <div class="offset-top offset-left child-block">
+            <hЗ class="title">@ViewBag.Title</hЗ>
+        </div>
+        <div class="position-right" style="margin-top: 25px">
             <a class="btn btn-sm btn-primary" asp-action="Logout" asp-controller="Account">Выход</a>
         </div>
 

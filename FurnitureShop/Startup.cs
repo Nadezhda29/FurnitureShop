@@ -56,6 +56,8 @@ namespace FurnitureShop
                     defaults: new { Controller = "Home", Action = "Index"}));
 
             IdentitySeedData.EnsurePopulated(app);
+
+            //SeedData.Fill(app);
         }
     }
 }

@@ -6,23 +6,23 @@ namespace FurnitureShop.Models
     {
         public long ID { get; set; }
 
-        [Required(ErrorMessage = "Please enter a furniture name")]
+        [Required(ErrorMessage = "Пожалуйста, введите название мебели")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Please select a furniture type")]
+        [Required(ErrorMessage = "Пожалуйста, выберите тип мебели")]
         public int TypeID { get; set; }
 
-        [Required(ErrorMessage = "Please select a furniture category")]
+        [Required(ErrorMessage = "Пожалуйста, выберите категорию")]
         public int CategoryID { get; set; }
 
         [Required]
-        [Range(0.01, double.MaxValue, ErrorMessage = "Please enter a price")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Пожалуйста, введите цену")]
         public decimal Price { get; set; }
 
-        [Required(ErrorMessage = "Please enter a furniture description")]
+        [Required(ErrorMessage = "Пожалуйста, введите описание")]
         public string Description { get; set; }
 
-        [Required(ErrorMessage = "Please paste a furniture image")]
+        [Required(ErrorMessage = "Пожалуйста, прикрепите картинку")]
         public byte[] Image { get; set; }
     }
 }

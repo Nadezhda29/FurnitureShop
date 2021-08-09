@@ -3,6 +3,9 @@ using FurnitureShop.Models;
 using FurnitureShop.Models.ViewModels;
 using System.Linq;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using System;
 
 namespace FurnitureShop.Controllers
 {
@@ -29,24 +32,41 @@ namespace FurnitureShop.Controllers
             });
         }
 
-        public ViewResult Add(Furniture furniture) => View("AddFurniture", new Furniture());
+        public ViewResult Add(Furniture furniture)
+        {
+            ViewBag.Title = "Добавление";
+            return View("Edit", new Furniture());
+        } 
 
         public ViewResult Edit(int furnitureId)
         {
+            ViewBag.Title = "Редактирование";
             return View(repository.ListFurniture.FirstOrDefault(f => f.ID == furnitureId));
         }
 
         [HttpPost]
-        public IActionResult Edit(Furniture furniture)
+        public IActionResult Edit(Furniture furniture, byte[] bytesImage)
         {
             if (ModelState.IsValid)
             {
+                Console.WriteLine("Модель правиьна");
+
+                //byte[] bytes;
+                //Stream stream = file.OpenReadStream();
+                //BinaryReader reader = new BinaryReader(stream);
+
+                //bytes = reader.ReadBytes((int)stream.Length);
+
+                furniture.Image = bytesImage;
+
+
                 repository.Save(furniture);
                 TempData["message"] = $"{furniture.Name} has been saved.";
                 return RedirectToAction("Index");
             }
             else
             {
+                Console.WriteLine("Модель невалидна");
                 return View(furniture);
             }
         }
@@ -62,5 +82,17 @@ namespace FurnitureShop.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        //[HttpPost]
+        //public RedirectToActionResult ConvertImage(IFormFile image)
+        //{
+        //    byte[] bytes;
+        //    Stream stream = image.OpenReadStream();
+        //    BinaryReader reader = new BinaryReader(stream);
+
+        //    bytes = reader.ReadBytes((int)stream.Length);
+
+        //    return RedirectToAction(nameof(Edit), bytes);
+        //}
     }
 }

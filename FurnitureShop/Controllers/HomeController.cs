@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using FurnitureShop.Models;
 using FurnitureShop.Models.ViewModels;
+using System.IO;
+using System.Drawing;
 
 namespace FurnitureShop.Controllers
 {
@@ -27,6 +29,13 @@ namespace FurnitureShop.Controllers
                 //CurrentCategory = repository.ListCategory
                 // .FirstOrDefault(c => c.ID == categoryID).Category
             });
+        }
+
+        public FileContentResult GetImage(int ID)
+        {
+            Furniture furniture = repository.ListFurniture.Where(f => f.ID == ID).FirstOrDefault();
+
+            return File(furniture.Image, "image/jpg");
         }
     }
 }
