@@ -1,0 +1,18 @@
+﻿@model Cart
+
+<div class="" style="margin-left: 1000px">
+    @if (Model.Lines.Count() > 0)
+    {
+        <small class="navbar-text">
+            <b>Корзина</b>
+            @Model.Lines.Sum(x => x.Quantity) товаров
+            @Model.ComputeTotalValue().ToString("c")
+        </small>
+    }
+
+    <a style="background-color: white" class="btn btn-sm btn-secondary navbar-btn" asp-action="Index" asp-controller="Cart">
+        <img src="https://www.pinclipart.com/picdir/big/403-4035278_png-file-svg-shopping-cart-icon-png-clipart.png" width="25" height="20" />
+    </a>
+
+    @*asp-route-returnUrl="@ViewContext.HttpContext.Request.PathAndQuery()"*@
+</div>

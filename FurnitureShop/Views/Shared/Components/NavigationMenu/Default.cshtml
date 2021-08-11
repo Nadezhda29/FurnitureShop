@@ -1,0 +1,19 @@
+﻿@model IEnumerable<CategoryFurniture>
+
+<div style="float: left" class="offset-top">
+    <a class="btn btn-block btn-secondary" asp-action="Index" asp-controller="Home" asp-route-category="">
+        Главная
+    </a>
+</div>
+
+
+@foreach (var item in Model)
+{
+    <div style="float: left" class="offset-top">
+        <a class="btn btn-block @(item.ID == ViewBag.SelectedCategory? "btn-primary": "btn-secondary")" asp-action="ListFurniture" asp-controller="Home"
+           asp-route-categoryID="@item.ID">
+            @item.Category
+        </a>
+    </div>
+}
+

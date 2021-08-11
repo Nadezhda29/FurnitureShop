@@ -33,6 +33,12 @@ namespace FurnitureShop
             services.AddIdentity<IdentityUser, IdentityRole>()
                .AddEntityFrameworkStores<AppIdentityDbContext>()
                .AddDefaultTokenProviders();
+
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -44,16 +50,25 @@ namespace FurnitureShop
 
             app.UseStaticFiles();
 
-            //app.UseSession();
+            app.UseSession();
 
             app.UseAuthentication();
 
 
             app.UseMvc(routes =>
+            {
                 routes.MapRoute(
-                    name: default,
-                    template: "{controller}/{action}/{id?}",
-                    defaults: new { Controller = "Home", Action = "Index"}));
+                    name: null,
+                    template: "{category}",
+                    defaults: new
+                    {
+                        controller = "Home",
+                        action = "ListFurniture",
+                    });
+
+                routes.MapRoute(name: null, template: "{controller}/{action}/{id?}");
+                routes.MapRoute(name: null, template: "{controller=Home}/{action=Index}/{id?}");
+            });
 
             IdentitySeedData.EnsurePopulated(app);
 

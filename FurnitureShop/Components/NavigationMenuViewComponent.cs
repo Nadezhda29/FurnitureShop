@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using FurnitureShop.Models;
 using System.Linq;
+using FurnitureShop.Models;
 
-namespace FurnitureShop
+namespace FurnitureShop.Components
 {
     public class NavigationMenuViewComponent: ViewComponent
     {
@@ -15,11 +15,8 @@ namespace FurnitureShop
 
         public IViewComponentResult Invoke()
         {
-            ViewBag.SelectedCategory = RouteData?.Values["category"];
-            return View(repository.ListFurniture
-                .Select(f => f.CategoryID)
-                .Distinct()
-                .OrderBy(f =>f));
+            ViewBag.SelectedCategory = RouteData?.Values["categoryID"];
+            return View(repository.ListCategory);
         }
     }
 }

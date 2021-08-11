@@ -1,45 +1,19 @@
-﻿@model FurnitureListViewModel
-
-@{
+﻿@{
     ViewBag.Title = "Интернет-магазин \"Furniture Shop\"";
+    Layout = "_Layout";
 }
 
 <div class="offset-left">
     <hЗ class="title">@ViewBag.Title</hЗ>
 </div>
 
-<div class="offset-top offset-left">
-    <a class="a">Категория 1</a>
-    <a class="a">Категория 2</a>
-    <a class="a">Категория 3</a>
+<div class="text-center offset-top">
+    <img src=""/>
+    <p>
+        Какой то текст
+    </p>
 </div>
 
-@if (Model.Furniture.Count() == 0)
-{
-    <div class="text-center p-2" style="margin-top: 70px; margin-left: 650px">No Data</div>
-}
-else
-{
-    <div class="parent-block" style="width: 100%">
-        <div class="text-center child-block text-name" style="width: 25%">Фильтр</div>
-
-        <div class="child-block" style="width: 75%">
-            <div class="parent-block" style="width: 100%">
-                @foreach (var item in Model.Furniture)
-                {
-                    <div class="child-block div-block text-center">
-                        <img class="picture" src="@Url.Action("GetImage", "Home", new {item.ID})" />
-                        <p class="text-name">@item.Name</p>
-                        <p class="text-desc-price">@item.Description</p>
-                        <p class="text-desc-price">@item.Price.ToString("c")</p>
-                    </div>
-                }
-            </div>
-
-        </div>
-    </div>
-    
-    
-}
-
-
+<div class="offset-left">
+    Подвал
+</div>

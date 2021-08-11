@@ -8,6 +8,19 @@
     <link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*min.css" />
 </head>
 <body>
+    <div class="navbar navbar-inverse bg-inverse" role="navigation">
+        <div class="row">
+            <a class="col navbar-brand" style="margin-left: 30px" href="#">FURNITURE SHOP</a>
+            <div class="col-4 text-right" style="margin-right: 100px">
+                @await Component.InvokeAsync("CartSummary")
+            </div>
+        </div>
+    </div>
+
+    <div id="categories" style="margin-left: 30px; margin-bottom: 30px; display: inline-block">
+        @await Component.InvokeAsync("NavigationMenu")
+    </div>
+
     <div class="parent-block full-width">
         @RenderBody()
     </div>

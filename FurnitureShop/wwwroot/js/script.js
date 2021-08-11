@@ -66,3 +66,27 @@
 //    var bytesImage = document.getElementsByName('bytesImage');
 //    bytesImage.textContent = result;
 //}
+
+
+
+function getTypes() {
+    var types = document.getElementsByName("check");
+    var listId = document.getElementsByName("id");
+    var selectedTypes = document.getElementById("selectedTypes");
+
+    for (var i = 0; i < types.length; i++) {
+        var id = document.getElementById(listId[i].value);
+        if (types[i].checked && id == null) {
+            var input = document.createElement('input');
+            input.type = "text";
+            input.name = "checks";
+            input.id = listId[i].value;
+            input.hidden = true;
+            input.value = listId[i].value;
+            input.innerText = listId[i].value;
+
+            selectedTypes.appendChild(input);
+
+        }
+    }
+}

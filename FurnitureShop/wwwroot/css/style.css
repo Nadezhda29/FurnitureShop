@@ -12,11 +12,6 @@
     margin-left: 20px;
 }
 
-.a {
-    font-size: 20px;
-    font-family: 'Times New Roman';
-}
-
 .parent-block{
     display: inline-block;
     margin-top: 30px;
@@ -62,3 +57,13 @@
     width: 100%;
 }
 
+.text-filter {
+    font-size: 22px;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.width-price-input{
+    width: 100px;
+}
