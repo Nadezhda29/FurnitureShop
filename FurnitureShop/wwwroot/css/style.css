@@ -37,7 +37,7 @@
 
 .div-block{
     width: 32%;
-    height: 400px;
+    height: 500px;
 }
 
 .text-name {
@@ -66,4 +66,22 @@
 
 .width-price-input{
     width: 100px;
+}
+
+.text-type {
+    font-size: 17px;
+    font-family: 'Times New Roman';
+}
+
+.cart {
+    font-size: 30px;
+    font-family: 'Times New Roman';
+    font-weight: bold;
+    margin-left: 100px;
+    margin-bottom: 30px;
+}
+
+.cart-table {
+    width: 1140px;
+    margin-left: 75px;
 }

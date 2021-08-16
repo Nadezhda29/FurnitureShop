@@ -8,5 +8,6 @@ namespace FurnitureShop.Models
         public DbSet<Furniture> Furniture { get; set; }
         public DbSet<TypeFurniture> TypeFurniture { get; set; }
         public DbSet<CategoryFurniture> CategoryFurniture { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }

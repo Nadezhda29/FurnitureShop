@@ -44,20 +44,12 @@ namespace FurnitureShop.Controllers
         {
             List<Furniture> listFurniture = TempData.Get<List<Furniture>>("list");
 
-            foreach (var item in listFurniture)
-            {
-                Console.WriteLine("Элемент: " + item.Name);
-            }
-
             return View("ListFurniture", new FurnitureListViewModel
             {
-                Furniture = listFurniture
-               /* .Where(f => f.CategoryID == categoryId)*/,
+                Furniture = listFurniture,
 
                 CategoryFurniture = repository.ListCategory,
                 TypeFurniture = repository.ListType
-                
-                //CurrentCategory = categoryId
             });
         }
 
@@ -79,9 +71,11 @@ namespace FurnitureShop.Controllers
                         && f.Price >= Convert.ToDecimal(price1) && f.Price <= Convert.ToDecimal(price2)));
             }
 
-            TempData.Put("list", listFurniture);
 
-            return RedirectToAction("FilterList", "Home" /*new { categoryId }*/);
+            TempData.Put("list", listFurniture);
+            TempData["CategoryID"] = listFurniture.FirstOrDefault().CategoryID;
+
+            return RedirectToAction("FilterList", "Home");
         }
     }
 }

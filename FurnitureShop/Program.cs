@@ -21,6 +21,10 @@ namespace FurnitureShop
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .UseDefaultServiceProvider(options =>
-                    options.ValidateScopes = false);
+                    options.ValidateScopes = false)
+                .UseKestrel(options =>
+                {
+                    options.Limits.MaxRequestHeadersTotalSize = 1048576;
+                });
     }
 }

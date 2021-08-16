@@ -21,6 +21,7 @@ namespace FurnitureShop
         {
             services.AddMvc();
             services.AddTransient<IFurnitureRepository, FurnitureRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
@@ -70,7 +71,7 @@ namespace FurnitureShop
                 routes.MapRoute(name: null, template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            IdentitySeedData.EnsurePopulated(app);
+            //IdentitySeedData.EnsurePopulated(app);
 
             //SeedData.Fill(app);
         }

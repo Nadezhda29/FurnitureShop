@@ -1,21 +1,26 @@
 ﻿@model CartIndexViewModel
 
 @{
-    Layout = null;
+    ViewBag.Title = "Корзина";
+    Layout = "_Layout";
 }
 
-<h2 class="p-2 text-center" style="font-family:'Times New Roman'; font-size: 20px;
-    font-weight:bold; margin-bottom: 30px">
-    Корзина
-</h2>
 
-<table class="table table-bordered table-striped" style="width: 800px; text-align:center; margin-left: 300px; margin-bottom: 30px">
+<link rel="stylesheet" asp-href-include="css/style.css" />
+<link rel="stylesheet" asp-href-include="lib/bootstrap/dist/css/*min.css" />
+
+<div class="offset-left" style="margin-bottom: 30px">
+    <hЗ class="cart">@ViewBag.Title</hЗ>
+</div>
+
+<table class="table table-bordered table-striped cart-table">
     <thead>
         <tr>
             <th>Количество</th>
             <th>Предмет</th>
             <th class="text-right">Цена</th>
             <th class="text-right">Стоимость</th>
+            <th></th>
         </tr>
     </thead>
 
@@ -44,6 +49,7 @@
             <td class="text-right">
                 @Model.Cart.ComputeTotalValue().ToString("c")
             </td>
+            <td></td>
         </tr>
     </tfoot>
 
