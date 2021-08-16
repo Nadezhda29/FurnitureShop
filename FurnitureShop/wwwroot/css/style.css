@@ -8,6 +8,10 @@
     margin-top: 20px;
 }
 
+.offset-top-40 {
+    margin-top: 40px;
+}
+
 .offset-left {
     margin-left: 20px;
 }
@@ -84,4 +88,20 @@
 .cart-table {
     width: 1140px;
     margin-left: 75px;
+}
+
+.text-main {
+    font-size: 20px;
+    font-family: 'Times New Roman';
+    margin-left: 20px;
+}
+
+.footer-color{
+    background-color: black
+}
+
+.footer-text {
+    font-size: 20px;
+    font-family: 'Times New Roman';
+    color: white;
 }
