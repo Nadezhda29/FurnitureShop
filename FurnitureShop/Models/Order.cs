@@ -15,19 +15,14 @@ namespace FurnitureShop.Models
         [Required(ErrorMessage = "Пожалуйста, введите Ваше имя")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Please enter the first address line")]
-        public string Line1 { get; set; }
-        public string Line2 { get; set; }
-        public string Line3 { get; set; }
+        [Required(ErrorMessage = "Пожалуйста, введите улицу, дом и квартиру")]
+        public string Street { get; set; }
 
-        [Required(ErrorMessage = "Please enter a city name")]
+        [Required(ErrorMessage = "Пожалуйста, введите Ваш город")]
         public string City { get; set; }
-        [Required(ErrorMessage = "Please enter a state name")]
-        public string State { get; set; }
         public string Zip { get; set; }
 
-        [Required(ErrorMessage = "Please enter a country name")]
+        [Required(ErrorMessage = "Пожалуйста, введите Вашу страну")]
         public string Country { get; set; }
-        public bool GiftWrap { get; set; }
     }
 }

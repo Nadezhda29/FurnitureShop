@@ -53,12 +53,6 @@ namespace FurnitureShop.Controllers
             });
         }
 
-        public FileContentResult GetImage(int ID)
-        {
-            Furniture furniture = repository.ListFurniture.Where(f => f.ID == ID).FirstOrDefault();
-
-            return File(furniture.Image, "image/jpg");
-        }
 
         [HttpPost]
         public RedirectToActionResult Filter(IEnumerable<string> checks, string price1, string price2)
@@ -76,6 +70,13 @@ namespace FurnitureShop.Controllers
             TempData["CategoryID"] = listFurniture.FirstOrDefault().CategoryID;
 
             return RedirectToAction("FilterList", "Home");
+        }
+
+        public FileContentResult GetImage(int ID)
+        {
+            Furniture furniture = repository.ListFurniture.Where(f => f.ID == ID).FirstOrDefault();
+
+            return File(furniture.Image, "image/jpg");
         }
     }
 }

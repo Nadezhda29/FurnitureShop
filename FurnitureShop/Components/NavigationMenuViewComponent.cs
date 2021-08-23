@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using FurnitureShop.Models;
+using System;
 
 namespace FurnitureShop.Components
 {
@@ -15,6 +16,7 @@ namespace FurnitureShop.Components
 
         public IViewComponentResult Invoke()
         {
+            //ViewBag.SelectedCategory = Request.Query.FirstOrDefault(p => p.Key == "category").Value;
             ViewBag.SelectedCategory = RouteData?.Values["categoryID"];
             return View(repository.ListCategory);
         }
